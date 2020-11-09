@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     # Local
     "pname.users.apps.UsersConfig",
+    "pname.core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,9 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
