@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "django-project"
+name = "ayen-task"
 version = "0.1.0"
 description = ""
 authors = ["Ahmed Shahwan <ahmed@shahwan.me>"]

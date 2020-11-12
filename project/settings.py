@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     # Third party
     "phonenumber_field",
     # Local
-    "pname.users.apps.UsersConfig",
-    "pname.core.apps.CoreConfig",
+    "ayen_task.users.apps.UsersConfig",
+    "ayen_task.core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
