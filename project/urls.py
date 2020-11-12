@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from ayen_task.core.views import FileView
 
 api_urlpatterns = [
     path("users/", include("ayen_task.users.api.urls", namespace="users_api")),
@@ -27,6 +26,7 @@ urlpatterns = [
     path("users/", include("ayen_task.users.urls", namespace="users")),
     path("users/", include("django.contrib.auth.urls")),
     path("api/", include(api_urlpatterns)),
-    path("file/", FileView.as_view(), name="file"),
+    path("search/", TemplateView.as_view(template_name="search.html"), name="search"),
+    path("upload/", TemplateView.as_view(template_name="upload.html"), name="upload"),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
 ]

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+  <legend>Upload a new file by clicking "choose file" button then the "Upload" button</legend><br>
+  {% csrf_token %}
+  <!-- <input type="file" name="file" id="file">
+  <input type="submit" value="Upload" name="submit"> -->
+  {# {{ form|as_p }} #}
+  <input type="submit" value="Upload" name="submit">
+</form>
+{% endblock content %}

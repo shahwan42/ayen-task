@@ -1,10 +1,9 @@
+from django.http import request
+from ayen_task.core.forms import DocumentForm
 from django.shortcuts import render
-from django.views.generic.base import View
+from django.views.generic import TemplateView
+from django.views.generic import FormView
 
 
-class FileView(View):
-    def get(self, request, **kwargs):
-        return render(request, "core/file.html")
-
-    def post(self, request, **kwargs):
-        return render(request, "core/file.html")
+class Home(TemplateView):
+    template_name = "home.html"
