@@ -1,9 +1,16 @@
-from django.http import request
-from ayen_task.core.forms import DocumentForm
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView
 from django.views.generic import FormView
 
+from ayen_task.core.models import Document
+from ayen_task.core.forms import DocumentForm
 
-class Home(TemplateView):
-    template_name = "home.html"
+
+class Search(FormView):
+    pass
+
+
+class Upload(CreateView):
+    model = Document
+    fields = ["name", "file"]
+    success_url = "/"
+    template_name = "upload.html"
