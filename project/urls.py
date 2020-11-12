@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic.base import TemplateView
-from ayen_task.core.views import Search, Upload
+from django.conf import settings
+from django.conf.urls.static import static
+from ayen_task.core.views import Home, Search, Upload
 
 api_urlpatterns = [
     path("users/", include("ayen_task.users.api.urls", namespace="users_api")),
@@ -29,5 +30,8 @@ urlpatterns = [
     path("api/", include(api_urlpatterns)),
     path("search/", Search.as_view(), name="search"),
     path("upload/", Upload.as_view(), name="upload"),
-    path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("", Home.as_view(), name="home"),
 ]
+# media & static urls
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

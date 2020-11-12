@@ -1,1 +1,11 @@
 {% extends "base.html" %}
+
+{% block content %}
+<h2>Files uploaded so far</h2>
+{% for obj in object_list %}
+<div style="border-left: 2px solid gray; padding-left: 5px;">
+  <h3>{{ obj.name }}</h3>
+  <a href="{{ obj.file.url }}">{{ obj.file.url }}</a>
+</div>
+{% endfor %}
+{% endblock content %}

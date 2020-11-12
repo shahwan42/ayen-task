@@ -1,8 +1,13 @@
 from django.views.generic.edit import CreateView
 from django.views.generic import FormView
+from django.views.generic.list import ListView
 
 from ayen_task.core.models import Document
-from ayen_task.core.forms import DocumentForm
+
+
+class Home(ListView):
+    model = Document
+    template_name = "home.html"
 
 
 class Search(FormView):
