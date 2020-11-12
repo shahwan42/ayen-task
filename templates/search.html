@@ -2,8 +2,17 @@
 
 {% block content %}
 <form>
-  <p>Search file names & contents using the search form below</p>
-  <input type="text" name="search" placeholder="Search..">
-  <input type="submit" name="submit" value="search">
+  <legend>Search file names & contents using the search form below</legend><br>
+  {{ form }}
+  <input type="submit" value="search">
 </form>
+{% if object_list %}
+<h2>Files found:</h2>
+{% for obj in object_list %}
+<div style="border-left: 2px solid gray; padding-left: 5px;">
+  <h3>{{ obj.name }}</h3>
+  <a href="{{ obj.file.url }}">{{ obj.file.url }}</a>
+</div>
+{% endfor %}
+{% endif %}
 {% endblock content %}

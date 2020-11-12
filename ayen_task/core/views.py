@@ -2,6 +2,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic import FormView
 from django.views.generic.list import ListView
 
+from ayen_task.core.forms import SearchForm
 from ayen_task.core.models import Document
 
 
@@ -11,7 +12,8 @@ class Home(ListView):
 
 
 class Search(FormView):
-    pass
+    form_class = SearchForm
+    template_name = "search.html"
 
 
 class Upload(CreateView):

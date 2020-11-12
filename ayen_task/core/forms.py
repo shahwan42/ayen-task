@@ -1,8 +1,5 @@
 from django import forms
-from ayen_task.core.models import Document
 
 
-class DocumentForm(forms.ModelForm):
-    class Meta:
-        model = Document
-        fields = ("name", "file")
+class SearchForm(forms.Form):
+    keyword = forms.CharField(max_length=40)
