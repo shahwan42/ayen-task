@@ -7,7 +7,7 @@
   <input type="submit" value="search">
 </form>
 {% if object_list %}
-<h2>Files found:</h2>
+<h2>Files Containing '{{ request.GET.keyword }}'</h2>
 {% for obj in object_list %}
 <div style="border-left: 2px solid gray; padding-left: 5px;">
   <h3>{{ obj.name }}</h3>
